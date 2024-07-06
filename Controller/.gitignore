@@ -1,0 +1,10 @@
+/node_modules
+/.env
+/src/storage
+src/config/CliConfig.json
+src/storage\\logs/app.log
+/db/backup.gz
+*.log
+/storage
+.vscode/launch.json
+.vscode
