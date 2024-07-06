@@ -6,19 +6,34 @@
 void setupRoutes(AsyncWebServer &server)
 {
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-              { webapi_handle_Index(request); });
+            { 
+                Serial.println("[WebApi] /");
+                webapi_handle_Index(request); 
+            });
 
     server.on("/ping", HTTP_GET, [](AsyncWebServerRequest *request)
-              { webapi_handle_Ping(request); });
+              { 
+                Serial.println("[WebApi] /ping");
+                webapi_handle_Ping(request); 
+              });
 
     server.on("/start", HTTP_POST, [](AsyncWebServerRequest *request)
-              { webapi_handle_Start(request); });
+              { 
+                Serial.println("[WebApi] /start");
+                webapi_handle_Start(request); 
+              });
 
     server.on("/stop", HTTP_POST, [](AsyncWebServerRequest *request)
-              { webapi_handle_Stop(request); });
+              { 
+                Serial.println("[WebApi] /stop");
+                webapi_handle_Stop(request); 
+              });
 
     server.on("/state", HTTP_GET, [](AsyncWebServerRequest *request)
-              { webapi_handle_getState(request); });
+              { 
+                Serial.println("[WebApi] /state");
+                webapi_handle_getState(request); 
+              });
 }
 
 void webapi_handle_Index(AsyncWebServerRequest *request)
