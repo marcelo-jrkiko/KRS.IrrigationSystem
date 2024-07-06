@@ -13,26 +13,21 @@ import Graceful from "@ladjs/graceful";
 
 getLogger().info("Loading all jobs..");
 
-function listAllJobs() {
-  const pattern = "src/tasks/**/*.json";
+function listAllJobs(customPattern : string | undefined) {
+  const pattern = customPattern == undefined ? "src/tasks/**/*.json" : customPattern;
   return glob.sync(pattern).map((p) => path.resolve(p));
 }
 
 const jobs: Array<string | (() => void) | JobOptions> = [];
 
-const allRoutes = listAllJobs();
-allRoutes.forEach((jobFile) => {
-  const fileParts = path.parse(jobFile);
-  getLogger().info("[Scheduler] " + fileParts.name);
+const allJobs = listAllJobs(undefined);
+allJobs.forEach((jobFile) => {
+  parseJobDef(jobFile);
+});
 
-  const jobModule = JSON.parse(fs.readFileSync(jobFile).toString());
-
-  jobs.push({
-    name: fileParts.name,
-    interval: jobModule.Schedule,
-  });
-
-  getLogger().info("[Scheduler] Loaded " + jobModule.Name  + "= " + jobModule.Schedule);
+const customJobs = listAllJobs("storage/tasks/**/*.json");
+customJobs.forEach((jobFile) => {
+  parseJobDef(jobFile);
 });
 
 getLogger().info("Initializing..");
@@ -49,4 +44,22 @@ const bree = new Bree({
 const graceful = new Graceful({ brees: [bree] });
 graceful.listen();
 bree.start();
+
+function parseJobDef(jobFile: string) {
+  const fileParts = path.parse(jobFile);
+  const jobModule = JSON.parse(fs.readFileSync(jobFile).toString());
+  const jobName = (jobModule.Source == undefined ? fileParts.name : jobModule.Source);
+
+  getLogger().info("[Scheduler] " + fileParts.name + " / " + jobName);
+
+  jobs.push({
+    name: jobName,
+    interval: jobModule.Schedule,
+    worker : ( jobModule.Data !== undefined) ? {
+      workerData: jobModule.Data
+    } : undefined
+  });
+
+  getLogger().info("[Scheduler] Loaded " + jobModule.Name + "= " + jobModule.Schedule);
+}
 

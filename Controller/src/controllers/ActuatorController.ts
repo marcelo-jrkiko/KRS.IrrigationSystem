@@ -1,12 +1,6 @@
 import { BaseController } from "../core/domain/BaseController";
-import { Router, Request, Response } from 'express';
-import { getIPRange } from 'get-ip-range';
-import { getGlobalConfiguration, getLogger } from "../GlobalContext";
-import * as fs from 'fs';
-import * as path from 'path';
+import { Request, Response } from 'express';
 import { ActuatorConfig } from "../models/ActuatorConfig";
-import axios from 'axios';
-import qs from 'qs';
 import { ActuatorManager } from "../core/ActuatorManager";
 
 export class ActuatorController extends BaseController {
