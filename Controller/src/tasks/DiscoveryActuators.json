@@ -1,0 +1,4 @@
+{
+    "Name": "Discovery all actuators on the network",
+    "Schedule": "every 1 days at 01:00 am"
+}
