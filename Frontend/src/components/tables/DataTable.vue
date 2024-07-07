@@ -3,11 +3,12 @@
         :total="totalRows" :is-slot-mode="true" :sortable="false" :is-hide-paging="true">
 
         <template v-slot:edit="data">
-            
             <a @click="onEdit(data.value)">
                 <i class="btn btn-outline-dark fa fa-pencil item-edit" />
             </a>
-            
+        </template>
+
+        <template v-slot:delete="data">
             <a @click="onDelete(data.value)">
                 <i class="btn btn-outline-dark fa fa-trash item-delete"/>
             </a>
@@ -19,7 +20,7 @@
         </template>
     </table-lite>
 
-    <b-pagination align="center" pills size="sm" v-if="allowPaging" :total-rows="totalRows" :per-page="pageSize" v-model="currentPage" @update:model-value="onPageChange" />
+    <b-pagination align="center" pills size="sm" v-if="allowPaging" :total-rows="totalRows" :per-page="pageSize" v-model="_currentPage" @update:model-value="onPageChange" />
 </template>
 
 <script lang="ts">
@@ -38,11 +39,19 @@ export default defineComponent({
         allowPaging: Boolean,
         pageSize: Number,
         editButton: Boolean,
-        deleteButton: Boolean        
+        deleteButton: Boolean,
+        currentPage: Number
     },
     data() {
         return {
-            currentPage: 1
+            _currentPage: 1
+        }
+    },
+    watch: {
+        currentPage(val, oldVal) {
+            if(val !== this._currentPage) {
+                this._currentPage = val;
+            }
         }
     },
     computed: {
@@ -52,13 +61,22 @@ export default defineComponent({
         tableColumns() {
             const original : Array<any> = this.Columns!.slice();
 
-            if(this.editButton || this.deleteButton) {
+            if(this.editButton) {
                 original?.push( {
-                        label: this.$t("Ações"),
+                        label: "Editar",
                         field: "edit",
                         width: "5%",
                         sortable: false,
                     });
+            }
+
+            if(this.deleteButton) {
+                original?.push( {
+                    label: "Apagar",
+                    field: "delete",
+                    width: "5%",
+                    sortable: false,
+                });
             }
 
             return original;
@@ -81,8 +99,5 @@ export default defineComponent({
 .vtl-table {
     display: table !important;
     text-align: center;
-}
-.vs__clear{
-    display: none!important;
 }
 </style>

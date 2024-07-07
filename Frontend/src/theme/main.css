@@ -63,21 +63,15 @@
 }
 
 
-/**
-Badges de Perfils
-**/
+:root,
+:host {
+    --vs-search-input-bg: rgb(255, 255, 255);
+    --vs-search-input-color: white !important;
+    --vs-dropdown-color: white;
+    --vs-selected-bg: #f0f0f0;
 
-.bdg-Admin {
-    background-color: #5a151e96;
-    padding: 0.5rem;
 }
 
-.bdg-Partner {
-    background-color: #204d9296;
-    padding: 0.5rem;
-}
-
-.bdg-Reader {
-    background-color: #80781696;
-    padding: 0.5rem;
+.vs__dropdown-toggle {
+    background: white !important;
 }

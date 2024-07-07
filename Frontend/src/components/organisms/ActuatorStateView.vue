@@ -15,7 +15,7 @@ export default {
     },
     computed: {
         elapsedTimeHuman() {
-            if (this.elapsedTime == 0) {
+            if (this.elapsedTime == 0 || this.state !== "RUNNING") {
                 return "-";
             }
 
@@ -23,9 +23,9 @@ export default {
             let minutes = (this.elapsedTime / (1000 * 60));
             let hours = (this.elapsedTime / (1000 * 60 * 60));
             let days = (this.elapsedTime / (1000 * 60 * 60 * 24));
-            if (seconds < 60) return seconds + " Segundos";
-            else if (minutes < 60) return minutes + " Minutos";
-            else if (hours < 24) return hours + " Horas";
+            if (seconds < 60) return seconds.toFixed(1) + " Segundos";
+            else if (minutes < 60) return minutes.toFixed(1) + " Minutos";
+            else if (hours < 24) return hours.toFixed(1) + " Horas";
             else return days + " Dias"
         }
     },

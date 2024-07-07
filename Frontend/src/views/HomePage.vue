@@ -5,14 +5,15 @@ import { getDefaultClient } from '@/core/Backend/BackendClient';
 import vSelect from 'vue-select'
 import ActuatorStateView from '@/components/organisms/ActuatorStateView.vue';
 import ActuatorControl from '@/components/organisms/ActuatorControl.vue';
-
+import ActuatorSchedules from '@/components/organisms/ActuatorSchedules.vue';
 export default {
   name: 'HomePage',
   components: {
     BasicLayout,
     vSelect,
     ActuatorStateView,
-    ActuatorControl
+    ActuatorControl,
+    ActuatorSchedules
   },
   data() {
     return {
@@ -52,8 +53,8 @@ export default {
           </b-card>
         </b-col>
       </b-row>
-      <b-row>
-        <b-col class="mt-2">
+      <b-row class="mt-2">
+        <b-col >
           <b-container v-if="currentActuator !== null && currentActuator.Name !== undefined">
             <b-row>
               <b-col cols="6">
@@ -69,6 +70,13 @@ export default {
             </b-row>
           </b-container>
         </b-col>
+      </b-row>
+      <b-row class="mt-2">
+          <b-col>
+            <ActuatorSchedules v-if="currentActuator !== null && currentActuator.Name !== undefined" :name="currentActuator.Name">
+              
+            </ActuatorSchedules>
+          </b-col>
       </b-row>
     </b-container>
   </basic-layout>
