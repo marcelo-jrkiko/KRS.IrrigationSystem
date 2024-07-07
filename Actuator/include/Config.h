@@ -11,7 +11,7 @@ struct CONFIG {
 
 extern CONFIG _MY_CONFIG;
 
-const int ACTUATOR_PIN = 4;
+const int ACTUATOR_PIN = 14;
 
 void loadConfig();
 void saveConfig();
