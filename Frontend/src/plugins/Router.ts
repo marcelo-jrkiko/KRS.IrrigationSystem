@@ -9,11 +9,6 @@ import {
 
 // Components
 import Erro404Page from '@/views/Erro404Page.vue'
-
-
-// User Login and Account
-import OnConstructionPage from '@/views/OnConstructionPage.vue';
-
 import { ROUTES as PTBR_ROUTES } from './routes/routes.ptbr';
 import { useGlobal } from './Store';
 import { getCookie } from 'typescript-cookie';
@@ -27,11 +22,6 @@ const addRoutes : RouteRecordRaw[] = [
     path: "/:pathMatch(.*)*",
     name: "Erro404",
     component: Erro404Page
-  },
-  {
-    path: "/on-construction",
-    name: "ErroOnConstruction",
-    component: OnConstructionPage
   },
 ]
 PTBR_ROUTES.forEach(r => routes.push(r));
