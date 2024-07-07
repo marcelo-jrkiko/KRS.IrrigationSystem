@@ -44,7 +44,7 @@ export default {
 
 <template>
   <header>
-    <b-container fluid class="mb-2 bg-primary text-white">
+    <b-container fluid class="mb-2 bg-secondary text-white p-4">
         <b-row>
           <b-col class="text-center">
              <h3>Kiko Retro Space - Irrigation System Remote Control</h3>

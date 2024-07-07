@@ -40,14 +40,9 @@ export default {
     <b-container>
       <b-row>
         <b-col>
-          <h4>Controle Remoto do Sistema de Irrigação</h4>
-        </b-col>
-      </b-row>
-      <b-row>
-        <b-col>
-          <b-card class="bg-info">
+          <b-card class="bg-dark text-white">
             Selecione o Atuador:
-            <v-select :options="actuators" v-model="currentActuator" :label="'Name'">
+            <v-select :options="actuators" v-model="currentActuator" class="text-black" :label="'Name'">
 
             </v-select>
           </b-card>
@@ -74,7 +69,7 @@ export default {
       <b-row class="mt-2">
           <b-col>
             <ActuatorSchedules v-if="currentActuator !== null && currentActuator.Name !== undefined" :name="currentActuator.Name">
-              
+
             </ActuatorSchedules>
           </b-col>
       </b-row>
