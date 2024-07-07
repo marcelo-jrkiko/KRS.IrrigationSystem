@@ -1,0 +1,110 @@
+{
+    "Indicators": [{
+            "Id": 1,
+            "Key": "base",
+            "Icon": "base-indicator",
+            "Name": "Mapa Base",
+            "Layers": [{
+                    "Id": 1,
+                    "Name": "Bioma Amazônico - Hidrografia",
+                    "Visible": false,
+                    "Tooltip": "Teste ",
+                    "Opacity": 100,
+                    "Color": "#9E1010"
+                },
+                {
+                    "Id": 2,
+                    "Name": "Bioma Amazônico - Limites",
+                    "Visible": false,
+                    "Tooltip": "Teste Limites",
+                    "Opacity": 100,
+                    "Color": "#C6C6AE"
+                },
+                {
+                    "Id": 3,
+                    "Name": "Divisões Político Administrativas",
+                    "Visible": false,
+                    "Tooltip": "Teste Limites",
+                    "Opacity": 100,
+                    "Color": "#C6C6AE"
+                },
+                {
+                    "Id": 4,
+                    "Name": "Registros de Povos Isolados",
+                    "Visible": false,
+                    "Tooltip": "Teste Limites",
+                    "Opacity": 100,
+                    "Color": "#C6C6AE",
+                    "Legends": [{
+                            "Id": 6,
+                            "Name": "Confirmado",
+                            "Visible": false,
+                            "Tooltip": "Teste Limites",
+                            "Opacity": 100,
+                            "Color": "#C6C6AE"
+                        },
+                        {
+                            "Id": 7,
+                            "Name": "Em Estudo",
+                            "Visible": false,
+                            "Tooltip": "Teste Limites",
+                            "Opacity": 100,
+                            "Color": "#C6C6AE"
+                        },
+                        {
+                            "Id": 8,
+                            "Name": "Informação",
+                            "Visible": false,
+                            "Tooltip": "Teste Limites",
+                            "Opacity": 100,
+                            "Color": "#C6C6AE"
+                        }
+                    ]
+                },
+                {
+                    "Id": 5,
+                    "Name": "Redes OPI",
+                    "Visible": false,
+                    "Tooltip": "Teste Limites",
+                    "Opacity": 100,
+                    "Color": "#C6C6AE"
+                }
+            ]
+        },
+        {
+            "Id": 2,
+            "Key": "fundiaria",
+            "Icon": "fundiaria-indicator",
+            "Name": "Fundiária",
+            "Layers": []
+        },
+        {
+            "Id": 3,
+            "Key": "empreendimentos",
+            "Icon": "empreendimentos-indicator",
+            "Name": "Empreendimentos",
+            "Layers": []
+        },
+        {
+            "Id": 4,
+            "Key": "invasoes",
+            "Icon": "invasoes-indicator",
+            "Name": "Invasões",
+            "Layers": []
+        },
+        {
+            "Id": 5,
+            "Key": "meioambiente",
+            "Icon": "meioambiente-indicator",
+            "Name": "Meio Ambiente",
+            "Layers": []
+        },
+        {
+            "Id": 6,
+            "Key": "saude",
+            "Icon": "saude-indicator",
+            "Name": "Saúde",
+            "Layers": []
+        }
+    ]
+}

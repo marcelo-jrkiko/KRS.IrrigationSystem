@@ -1,0 +1,13 @@
+.husky/
+.vscode/
+.yarn/
+coverage/
+dist/
+public/assets/
+public/assets/js/*.js
+tsconfig.*.json
+*.svg
+*.scss
+*.css
+docker/
+index.html

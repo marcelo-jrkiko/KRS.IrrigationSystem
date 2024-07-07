@@ -1,0 +1,83 @@
+#app {
+    margin: 0 !important;
+}
+
+.dt-bootstrap5 {
+    color: black;
+}
+
+.form-label {
+    color: #000;
+    text-align: start;
+}
+
+.invert-90 {
+    transform: rotate(-90deg);
+}
+
+
+/* Slider */
+
+.default-slider {
+    --width: 100% !important;
+    --height: 12px !important;
+    --color: #277C2B !important;
+    --track-color: #277C2B !important;
+    --tooltip-color: #FFFFFF !important;
+    --tooltip-text-color: #000000 !important;
+    /* --handle-scale: 1.45 !important; */
+    --handle-scale: 16px !important;
+    --handle-color: #fff3e5!important;
+}
+
+.transparent-slider {
+    --width: 100% !important;
+    --height: 12px !important;
+    --color: #277C2B !important;
+    --track-color: #277C2B !important;
+    --tooltip-color: #FFFFFF !important;
+    --tooltip-text-color: #000000 !important;
+    --handle-scale: 16px !important;
+    --handle-color: #fff3e5!important;
+}
+
+.vue3-slider .track,
+.vue3-slider .track-filled {
+    height: 6px!important;
+}
+
+
+/* Checkbox */
+
+.form-check-input:checked {
+    background-color: transparent;
+    border-color: #0B1A00;
+}
+
+.form-check-input:checked[type=radio] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='2' fill='%230B1A00'/%3e%3c/svg%3e") !important;
+}
+
+.col2-4 {
+    width: 23.3%;
+}
+
+
+/**
+Badges de Perfils
+**/
+
+.bdg-Admin {
+    background-color: #5a151e96;
+    padding: 0.5rem;
+}
+
+.bdg-Partner {
+    background-color: #204d9296;
+    padding: 0.5rem;
+}
+
+.bdg-Reader {
+    background-color: #80781696;
+    padding: 0.5rem;
+}

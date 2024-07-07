@@ -1,0 +1,41 @@
+{
+    "layers": [{
+            "TileLayer": [{
+                "TileWMS": [{
+                    "url": "https://newgeoserver.imaflora.org/geoserver/timberflow/wms",
+                    "params": [{
+                        "layers": "timberflow:pa_br_municipios_sql",
+                        "viewparams": "",
+                        "styles": ""
+                    }],
+                    "serverType": "geoserver",
+                    "transition": 0
+                }],
+                "opacity": 1,
+                "zIndex": 9000,
+                "type": "wms",
+                "name": "cities",
+                "visible": true
+            }]
+        },
+        {
+            "TileLayer": [{
+                "TileWMS": [{
+                    "url": "https://newgeoserver.imaflora.org/geoserver/timberflow/wms",
+                    "params": [{
+                        "layers": "timberflow:pa_br_municipios_sql",
+                        "viewparams": "",
+                        "styles": ""
+                    }],
+                    "serverType": "geoserver",
+                    "transition": 0
+                }],
+                "opacity": 1,
+                "zIndex": 9001,
+                "type": "wms",
+                "name": "cities_styled",
+                "visible": false
+            }]
+        }
+    ]
+}
