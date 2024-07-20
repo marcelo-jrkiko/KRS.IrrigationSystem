@@ -1,6 +1,8 @@
 import { doConfig as AppConfig } from './config/App';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
+import * as fs from 'fs';
+
 
 import { doConfig as LoggingConfig } from './config/Logging';
 import { doConfig as MailerConfig } from './config/Mailer';
@@ -20,3 +22,8 @@ AppConfig();
 LoggingConfig();
 MailerConfig();
 DiscoveryConfig();
+
+const tasksDir = path.join((globalThis as any).AppRoot, `storage/tasks`);
+if(!fs.existsSync(tasksDir)) {
+    fs.mkdirSync(tasksDir);
+}
